@@ -1,4 +1,5 @@
 {% load static %}
+{% load blog_tags %}
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -20,6 +21,8 @@
         <link rel='next' href='https://cuiqingcai.com/page/2' />
 
         <!-- /all in one seo pack -->
+
+
         <link rel='dns-prefetch' href='//libs.baidu.com' />
         <link rel='dns-prefetch' href='//s.w.org' />
                 <script type="text/javascript">
@@ -48,6 +51,9 @@
 
         <link rel='stylesheet' id='l2h_print_style-css'  href='/static/css/print.min.css' type='text/css' media='print' />
         <link rel='stylesheet' id='style-css'  href='/static/css/style.css' type='text/css' media='all' />
+
+        <link rel='stylesheet' id='style-css' href='{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}' type='text/css' media='all'/>
+
         <script type='text/javascript' src='/static/js/jquery.min.js'></script>
 
 
@@ -112,49 +118,66 @@
                     <a href="/">
                         <h1>
                             <span class="yusi-mono">静觅</span>
-                            <span class="yusi-bloger">崔庆才的个人博客</span>
+                            <span class="yusi-bloger">fswy的个人博客</span>
                         </h1>
                     </a>
                  </div>
             </div>
-
+            <!--导航条-->
             <div id="nav-header" class="navbar">
-
                 <ul class="nav">
-                    <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-44"><a href="https://cuiqingcai.com">首页</a></li>
-                    <li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-14">
-                        <a href="https://cuiqingcai.com/category/life">生活笔记</a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="https://cuiqingcai.com/category/life/notes">个人随笔</a></li>
-                            </ul>
-                    </li>
-                    <li id="menu-item-7" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7">
-                        <a href="https://cuiqingcai.com/category/technique">技术杂谈</a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-9"><a href="https://cuiqingcai.com/category/technique/cc">C/C++</a></li>
-                            </ul>
-                    </li>
-                    <li id="menu-item-418" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-418"><a href="https://cuiqingcai.com/category/resources">福利专区</a></li>
-                    <li id="menu-item-851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="https://cuiqingcai.com/about">关于自己</a></li>
-                    <li id="menu-item-251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-251"><a href="https://cuiqingcai.com/message">给我留言</a></li>
-                    <li id="menu-item-1131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1131"><a href="https://cuiqingcai.com/donate">赞助作者</a></li>
-                    <li id="menu-item-4571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4571"><a href="https://cuiqingcai.com/exchange">技术交流</a></li>
-                    <li id="menu-item-6142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6142"><a href="https://cuiqingcai.com/question">提问交流</a></li>
-                    <li id="menu-item-6397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6397"><a href="https://cuiqingcai.com/project">项目合作</a></li>
+                    <!--获取一级分类信息-->
+                    {% get_bigcategory_list as bigcategory %}
+                    <li id="menu-item-44"
+                        class="menu-item menu-item-type-custom menu-item-object-custom {% if not category %}current-menu-item current_page_item{% endif %} menu-item-home menu-item-44"><a
+                            href="/">首页</a></li>
+
+                    <!--导航条一级分类渲染-->
+                    {% for big in bigcategory %}
+
+                        <!--获取二级分类信息-->
+                        {% get_category_list big.id as cate %}
+
+                        <!--如果一级分类下有二级分类则进行渲染-->
+                        {% if cate %}
+                            <li id="menu-item-14"
+                                    class="menu-item menu-item-type-taxonomy menu-item-object-category {% if category == big.slug %}current-menu-item {% endif %} menu-item-has-children menu-item-14">
+                                    <a href="{% url 'blog:category' big.slug '' %}">{{ big.name }}</a>
+                                        <ul class="sub-menu">
+                                            <!--导航条二级分类渲染-->
+                                            {% for c in cate %}
+                                                    <li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="{% url 'blog:category'  big.slug   c.slug  %}">{{ c.name }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                            </li>
+
+                        <!--无二级分类的一级分类渲染-->
+                        {% else %}
+                            <li id="menu-item-851" class="menu-item menu-item-type-post_type menu-item-object-page {% if category == big.slug %}current-menu-item {% endif %} menu-item-851"><a href="{% url 'blog:category' big.slug '' %}">{{ big.name }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    <!--导航条结束-->
+
+                    <!--搜索框-->
+                    <!--目前搜索框功能感觉没必要没做-->
                     <li style="float:right;">
-                            <div class="toggle-search"><i class="fa fa-search"></i></div>
-                            <div class="search-expand" style="display: none;">
-                                <div class="search-expand-inner">
-                                    <form method="get" class="searchform themeform" onsubmit="location.href='https://cuiqingcai.com/?s=' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;" action="/">
-                                        <div>
-                                            <input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='search...';" onfocus="if(this.value=='search...')this.value='';" value="search...">
-                                        </div>
-                                    </form>
-                                </div>
+                        <div class="toggle-search"><i class="fa fa-search"></i></div>
+                        <div class="search-expand" style="display: none;">
+                            <div class="search-expand-inner">
+                                <form method="get" class="searchform themeform"
+                                      onsubmit="location.href='/?s=' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;"
+                                      action="/">
+                                    <div><input type="ext" class="search" name="s" onblur="if(this.value=='')this.value='search...';"
+                                                onfocus="if(this.value=='search...')this.value='';" value="search..."></div>
+                                </form>
                             </div>
+                        </div>
                     </li>
+                    <!--搜索框结束-->
+
                 </ul>
             </div>
+            <!--导航条结束-->
         </header>
         <section class="container">
             <div class="speedbar">

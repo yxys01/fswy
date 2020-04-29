@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44aaf3b0-74e9-4d45-9755-2d6b5c14d137" name="默认更改列表" comment=",">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/fswy/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/fswy/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/fswy/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base_right.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fswy/templatetags/blog_tags.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/migrations/0002_activate_article_bigcategory_carousel_category_friendlink_keyword_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/migrations/0002_activate_article_bigcategory_carousel_category_friendlink_keyword_tag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/migrations/0003_auto_20200424_1819.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/migrations/0003_auto_20200424_1819.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fswy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_right.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,8 +50,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -172,7 +148,7 @@
       <updated>1587605896217</updated>
       <workItem from="1587606203947" duration="15612000" />
       <workItem from="1587711445688" duration="14454000" />
-      <workItem from="1588058420915" duration="1912000" />
+      <workItem from="1588058420915" duration="14840000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />

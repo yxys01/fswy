@@ -1,76 +1,89 @@
 ﻿{%extends 'base_right.html'%}
 {% load  static %}
+{% load blog_tags %}
 
 {% block title %}静觅 | StormSha的个人网站{% endblock title %}
 
 {% block body%}
 <div class="content-wrap">
     <div class="content">
+        <!--幻灯片 -->
         <div id="wowslider-container1">
             <div class="ws_images">
                 <ul>
+                    {% get_carousel_index as carousels %}
+                    {% for carousel in carousels %}
                     <li>
-                        <a target="_blank" href="https://cuiqingcai.com/5052.html" title="Python3网络爬虫开发实战教程">
-                            <img src="/static/images/python-3网格爬虫开发实战-宣传图.jpg" title="Python3网络爬虫开发实战教程" alt="Python3网络爬虫开发实战教程" />
+                        <a target="_blank" href="{{ carousel.url }}" title="{{ carousel.context }}">
+                            <img src="{{ carousel.img_url }}" title="{{ carousel.title }}" alt="{{ carousel.title}}" />
                         </a>
                     </li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="ws_thumbs">
                 <div>
-                    <a target="_blank" href="#" title="Python3网络爬虫开发实战教程">
-                        <img src="/static/images/timthumb.php" /></a>
+                    {% get_carousel_index as carousels %}
+                    {% for carousel in carousels %}
+                    <a target="_blank" href="#" title="{{carousel.title}}">
+                        <img src="{{ carousel.img_url }}" /></a>
+                    {%  endfor %}
                 </div>
             </div>
             <div class="ws_shadow"></div>
         </div>
+        <!--幻灯片结束 -->
         <script type="text/javascript" src="/static/js/slider.js"></script>
+        <!--热门文章 -->
         <div>
             <div class="left-ad" style="clear: both;background-color: #fff; width: 30%;float: left;margin-right:2%;"></div>
             <div class="hot-posts">
                 <h2 class="title">热门排行</h2>
                 <ul>
+                    {% get_article_list 'views' 5 as hot_article  %}
+                    {% for hot in hot_article %}
                     <li>
                         <p>
                             <span class="muted">
-                                <a href="javascript:;" data-action="ding" data-id="1052" id="Addlike" class="action">
+                                <a href="javascript:;" data-action="ding" data-id="{{ hot.id}}" id="Addlike" class="action">
                                 <i class="fa fa-heart-o"></i>
-                                <span class="count">30735</span> 喜欢</a>
+                                <span class="count">{{ hot.loves }}</span> 喜欢</a>
                             </span>
                         </p>
-                        <span class="label label-1">1</span>
-                        <a href="https://cuiqingcai.com/1052.html" title="Python2爬虫学习系列教程">Python2爬虫学习系列教程</a></li>
+                        <span class="label label-1">{{ forloop.counter }}</span>
+                        <a href="/article/{{ hot.slug }}" title="{{ hot.title}}">{{ hot.title }}</a></li>
+                {% endfor %}
                 </ul>
             </div>
         </div>
+        <!--热门文章结束 -->
+        <!--文章列表 -->
+        {% for article in page_obj %}
         <article class="excerpt">
             <header>
-                <a class="label label-important" href="https://cuiqingcai.com/category/technique/python">Python<i class="label-arrow"></i></a>
+                <a class="label label-important" href="/category/{{ article.category.bigcategory.name }}/{{ article.category.name|lower }}">{{ article.category.name }}<i class="label-arrow"></i></a>
                 <h2>
-                    <a target="_blank" href="https://cuiqingcai.com/6408.html" title="第一次见到这种反爬虫。咋办？盘它。">第一次见到这种反爬虫。咋办？盘它。  </a>
+                    <a target="_blank" href="/article/{{ article.slug }}" title="{{ article.title }}">{{ article.title }} </a>
                 </h2>
             </header>
             <div class="focus">
-                <a target="_blank" href="https://cuiqingcai.com/6408.html">
-                    <img class="thumb" src="/static/images/timthumb.php" alt="第一次见到这种反爬虫。咋办？盘它。" /></a>
+                <a target="_blank" href="/article/{{ article.slug }}">
+                    <img class="thumb" src="{{ article.img_link }}" alt="{{ article.title }}" /></a>
             </div>
-            <span class="note"> 大家好，我是四毛，欢迎大家关注我的公众号。
-
-        今天在工作中，碰到了第一次碰见的反爬虫机制，感觉很有意思，在这里记录一下，希望对大家有帮助。
-                今天用到的库：
-        requests [请求]
-        lzstring [解压数据]
-        pyexecjs [执行JS]
-        &nbsp;
-        简...</span>
+            <span class="note">{{ article.summary }}</span>
             <p class="auth-span">
-                <span class="muted"><i class="fa fa-user"></i> <a href="https://cuiqingcai.com/author/simon">四毛</a></span>
-                <span class="muted"><i class="fa fa-clock-o"></i> 3周前 (01-26)</span>    <span class="muted"><i class="fa fa-eye"></i> 3307浏览</span>
-                <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="https://cuiqingcai.com/6408.html#comments">152评论</a></span>
-                <span class="muted"><a href="javascript:;" data-action="ding" data-id="6408" id="Addlike" class="action"><i class="fa fa-heart-o"></i>
-                <span class="count">19</span>喜欢</a></span>
+                <span class="muted"><i class="fa fa-user"></i> <a href="/author/{{ article.author }}">{{ article.author }}</a></span>
+                <span class="muted"><i class="fa fa-clock-o"></i>{{ article.create_date|date:'Y-m-d' }}</span>    <span class="muted"><i class="fa fa-eye"></i>{{ article.views }}浏览</span>
+                <span class="muted"><i class="fa fa-comments-o"></i> <a target="_blank" href="/article/{{ article.slug }}#comments">评论</a></span>
+                <span class="muted"><a href="javascript:;" data-action="ding" data-id="{{ article.id }}" id="Addlike" class="action"><i class="fa fa-heart-o"></i>
+                <span class="count">{{ article.loves }}</span>喜欢</a></span>
             </p>
         </article>
+    {% empty %}
+            <div class="no-post">暂时还没有发布的文章！</div>
+    {% endfor %}
+    <!--文章列表结束 -->
+
     </div>
 </div>
 {%endblock body%}
