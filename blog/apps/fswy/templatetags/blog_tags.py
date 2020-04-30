@@ -68,3 +68,58 @@ def get_tag_list():
 def get_friends():
     """获取活跃的友情链接"""
     return FriendLink.objects.filter(is_show=True, is_active=True)
+
+# 获取标题
+@register.simple_tag
+def get_title(category):
+    a = BigCategory.objects.filter(slug=category)
+    if a:
+        return a[0]
+
+# 获取前一篇文章，参数当前文章 ID
+@register.simple_tag
+def get_article_previous(article_id):
+    has_previous = False
+    id_previous = int(article_id)
+    while not has_previous and id_previous >= 1:
+        article_previous = Article.objects.filter(id=id_previous - 1).first()
+        if not article_previous:
+            id_previous -= 1
+        else:
+            has_previous = True
+    if has_previous:
+        article = Article.objects.filter(id=id_previous).first()
+        return article
+    else:
+        return
+
+# 获取下一篇文章，参数当前文章ID
+@register.simple_tag
+def get_article_next(article_id):
+    has_next = False
+    id_next = int(article_id)
+    article_id_max = Article.objects.all().order_by('-id').first()
+    id_max = article_id_max.id
+    while not has_next and id_next <= id_max:
+        article_next = Article.objects.filter(id=id_next + 1).first()
+        if not article_next:
+            id_next += 1
+        else:
+            has_next = True
+    if has_next:
+        article = Article.objects.filter(id=id_next).first()
+        return article
+    else:
+        return
+
+
+# 返回公告查询集
+@register.simple_tag
+def get_active():
+    """"获取活跃的友情链接"""
+    text = Activate.objects.filter(is_active=True)
+    if text:
+        text = text[0].text
+    else:
+        text = ''
+    return mark_safe(text)

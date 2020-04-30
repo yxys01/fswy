@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
+app_name = 'fswy'
 urlpatterns = [
     # 后台管理应用，django自带
     path('admin/', admin.site.urls),
+    # 用户
+    path('accounts/', include(('apps.user.urls', "apps.user"), namespace="accounts")),
     # fswy 应用
     path('', include(('apps.fswy.urls', "apps.fswy"), namespace="blog")),
+
 ]

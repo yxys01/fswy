@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'haystack',  # 全文搜索应用 这个要放在其他应用之前
     'imagekit', # 使用imagekit
     'apps.fswy', # 添加用户应用
     'apps.user',
@@ -144,6 +145,25 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+# 媒体文件收集
+MEDIA_URL = "/media/"   # 媒体文件别名(相对路径) 和 绝对路径
+MEDIA_ROOT = (
+    os.path.join(BASE_DIR, 'media')
+)
+
+# 统一分页设置
+BASE_PAGE_BY = 4
+BASE_ORPHANS = 5
+
+# 全文搜索应用配置
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'fswy.whoosh_cn_backend.WhooshEngine',  # 选择语言解析器为自己更换的结巴分词
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),  # 保存索引文件的地址，选择主目录下，这个会自动生成
+    }
+}
+# 自动更新索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # 网站描述，用于SEO
 SITE_DESCRIPTION = "Fswy的个人网站，记录生活的瞬间，分享学习的心得"
