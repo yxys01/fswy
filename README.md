@@ -1,12 +1,12 @@
 # fswy
 ## 开发环境
-系统：macOS Catalina 10.15.3
-软件：Pycharm 2019.2.3
-     Parallels Desktop 15.1.2 
-Python 3.8.0
-Django 3.0.5
-mysql 8.0.19
-virtualenv
+* 系统：macOS Catalina 10.15.3
+* 软件：Pycharm 2019.2.3
+*      Parallels Desktop 15.1.2 
+* Python 3.8.0
+* Django 3.0.5
+* mysql 8.0.19
+* virtualenv
 
 ## 技术要点：
 - [x] 前端使用Wordpress博客模板；
