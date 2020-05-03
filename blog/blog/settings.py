@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 网站地图应用
+    'django.contrib.sitemaps',
     'django.contrib.sites', # 添加评论app注册
     'django_comments',
+    'django.contrib.humanize',  # 添加人性化过滤器
     'haystack',  # 全文搜索应用 这个要放在其他应用之前
     'imagekit', # 使用imagekit
     'apps.fswy', # 添加用户应用

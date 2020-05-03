@@ -14,9 +14,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include,re_path
+from django.contrib.sitemaps.views import sitemap
+from apps.fswy.sitemaps import ArticleSitemap, CategorySitemap, TagSitemap
 
 app_name = 'fswy'
+
+# 网站地图
+sitemaps = {
+    'articles': ArticleSitemap,
+    'tags': TagSitemap,
+    'categories': CategorySitemap
+}
+
+
 urlpatterns = [
     # 后台管理应用，django自带
     path('admin/', admin.site.urls),
@@ -26,5 +37,8 @@ urlpatterns = [
     path('', include(('apps.fswy.urls', "apps.fswy"), namespace="blog")),
     # 评论栏
     path('comment/', include(('apps.comment.urls','apps.comment'), namespace='comment')),
+    # 网站地图
+    # re_path(r'^sitemap.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path(r'sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
 ]

@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44aaf3b0-74e9-4d45-9755-2d6b5c14d137" name="默认更改列表" comment=",">
-      <change afterPath="$PROJECT_DIR$/apps/comment/templatetags/comment_tags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/comment/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/user/templatetags/oauth_tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8df6dca5-81f7-4672-85e0-7bd8dc26d458.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8df6dca5-81f7-4672-85e0-7bd8dc26d458.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/fswy/sitemaps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/migrations/0002_activate_article_bigcategory_carousel_category_friendlink_keyword_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/migrations/0002_activate_article_bigcategory_carousel_category_friendlink_keyword_tag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/migrations/0003_auto_20200424_1819.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/migrations/0003_auto_20200424_1819.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/fswy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/fswy/templatetags/blog_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/templatetags/blog_tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_WRITELOCK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_z41m2ur2w9nmi3hb.seg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/_MAIN_1.toc" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +147,7 @@
       <workItem from="1587606203947" duration="15612000" />
       <workItem from="1587711445688" duration="14454000" />
       <workItem from="1588058420915" duration="29221000" />
-      <workItem from="1588212741616" duration="23639000" />
+      <workItem from="1588212741616" duration="26829000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
