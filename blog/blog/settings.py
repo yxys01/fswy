@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # 添加评论app注册
+    'django_comments',
     'haystack',  # 全文搜索应用 这个要放在其他应用之前
     'imagekit', # 使用imagekit
     'apps.fswy', # 添加用户应用
     'apps.user',
+    'apps.comment', #添加评论应用
 ]
 
 MIDDLEWARE = [
@@ -135,8 +138,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+# USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -173,3 +176,8 @@ SITE_KEYWORDS = "Fswy，网络，IT，技术，博客，Python，iOS"
 
 # 作者
 AUTH_USER_MODEL = 'user.Ouser'
+
+# django的评论库是一个站点，所以需要添加sites的应用并设置当前django工程的站点id=1
+SITE_ID = 1
+
+# sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))

@@ -76,6 +76,24 @@ def get_title(category):
     if a:
         return a[0]
 
+# 获取文章详情页下方的推荐阅读文章
+@register.simple_tag
+def get_category_article():
+    article_4 = get_article_list('views', 4)
+    article_8 = get_article_list('views', 8)
+    return {'article_4': article_4, 'article_8': article_8}
+
+
+
+# 获取文章 keywords
+@register.simple_tag
+def get_article_keywords(article):
+    keywords = []
+    keys = Keyword.objects.filter(article=article)
+    for key in keys:
+        keywords.append(key.name)
+    return ','.join(keywords)
+
 # 获取前一篇文章，参数当前文章 ID
 @register.simple_tag
 def get_article_previous(article_id):

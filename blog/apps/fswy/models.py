@@ -150,6 +150,9 @@ class Article(models.Model):
     def get_next(self):
         return Article.objects.filter(id_gt=self.id).order_by('id').first()
 
+
+
+
 # 公告
 class Activate(models.Model):
     text = models.TextField('公告', null=True)

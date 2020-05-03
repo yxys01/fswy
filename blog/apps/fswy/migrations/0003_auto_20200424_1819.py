@@ -23,16 +23,16 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='article',
             name='category',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='apps.fswy.Category', verbose_name='文章分类'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fswy.Category', verbose_name='文章分类'),
         ),
         migrations.AddField(
             model_name='article',
             name='keywords',
-            field=models.ManyToManyField(help_text='文章关键词，用来作为SEO中keywords,最好使用长尾词，3-4个足够', to='apps.fswy.Keyword', verbose_name='文章关键词'),
+            field=models.ManyToManyField(help_text='文章关键词，用来作为SEO中keywords,最好使用长尾词，3-4个足够', to='fswy.Keyword', verbose_name='文章关键词'),
         ),
         migrations.AddField(
             model_name='article',
             name='tags',
-            field=models.ManyToManyField(to='apps.fswy.Tag', verbose_name='标签'),
+            field=models.ManyToManyField(to='fswy.Tag', verbose_name='标签'),
         ),
     ]

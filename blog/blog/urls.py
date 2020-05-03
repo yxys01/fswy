@@ -24,5 +24,7 @@ urlpatterns = [
     path('accounts/', include(('apps.user.urls', "apps.user"), namespace="accounts")),
     # fswy 应用
     path('', include(('apps.fswy.urls', "apps.fswy"), namespace="blog")),
+    # 评论栏
+    path('comment/', include(('apps.comment.urls','apps.comment'), namespace='comment')),
 
 ]
