@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'apps.fswy', # 添加用户应用
     'apps.user',
     'apps.comment', #添加评论应用
+    'rest_framework', # RESTful API接口
 ]
 
 MIDDLEWARE = [
@@ -184,3 +185,4 @@ AUTH_USER_MODEL = 'user.Ouser'
 SITE_ID = 1
 
 # sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+API_FLAG = True
