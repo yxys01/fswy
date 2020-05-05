@@ -15,9 +15,15 @@
 
 - [x] 使用django-allauth实现第三方账号登录；
 
+- [x] 使用django-contrib-comments实现博客评论栏功能；
+
+- [x] 使用sitemap生成网站地图；
+
 - [x] 使用Haystack实现全文搜索；
  
 - [x] RESTful API接口
+
+- [x] RSS订阅
 
 ## 教程目录
 * [Django3.0+Python3.8+MySQL8.0 个人博客搭建一|前言](https://blog.csdn.net/yxys01/article/details/105704783)
@@ -32,3 +38,12 @@
 * [Django3.0+Python3.8+MySQL8.0 个人博客搭建十|整理项目结构](https://blog.csdn.net/yxys01/article/details/105815286)
 * [Django3.0+Python3.8+MySQL8.0 个人博客搭建十一|博客首页开发（二）](https://blog.csdn.net/yxys01/article/details/105825729)
 * [Django3.0+Python3.8+MySQL8.0 个人博客搭建十二|博客首页开发（三）](https://blog.csdn.net/yxys01/article/details/105859009)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十三|博客详情页面](https://blog.csdn.net/yxys01/article/details/105875230)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十四|注册登录](https://blog.csdn.net/yxys01/article/details/105875818)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十五|评论区](https://blog.csdn.net/yxys01/article/details/105901272)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十六|网站地图](https://blog.csdn.net/yxys01/article/details/105904112)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十七|Haystack 全文搜索](https://blog.csdn.net/yxys01/article/details/105904515)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十八|功能完善](https://blog.csdn.net/yxys01/article/details/105913034)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建十九|RESTful API接口](https://blog.csdn.net/yxys01/article/details/105913140)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建二十|RSS订阅](https://blog.csdn.net/yxys01/article/details/105913951)
+* [Django3.0+Python3.8+MySQL8.0 个人博客搭建二十一|天坑合集](https://blog.csdn.net/yxys01/article/details/105914348)
