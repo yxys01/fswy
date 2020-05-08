@@ -234,11 +234,13 @@ class DetailView(generic.DetailView):
                     obj.update_views()
                     ses[the_key] = time.time()
         # 文章可以使用markdown书写，带格式的文章，像csdn写的markdown文章一样
+
         md = markdown.Markdown(extensions=[
             'markdown.extensions.extra',
             'markdown.extensions.codehilite',
              TocExtension(slugify=slugify),
         ])
+
         obj.body = md.convert(obj.body)
         obj.toc = md.toc
         return obj

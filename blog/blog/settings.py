@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites', # 添加评论app注册
     'django_comments',
     'django.contrib.humanize',  # 添加人性化过滤器
+    'mdeditor',    #富文本编辑器
     'haystack',  # 全文搜索应用 这个要放在其他应用之前
     'imagekit', # 使用imagekit
     'apps.fswy', # 添加用户应用
@@ -158,6 +159,10 @@ MEDIA_ROOT = (
     os.path.join(BASE_DIR, 'media')
 )
 
+#settings.py
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')  #uploads必须存在，且在项目目录下
+# MEDIA_URL = '/media/'   #你上传的文件和图片会默认存在/uploads/editor下
+
 # 统一分页设置
 BASE_PAGE_BY = 4
 BASE_ORPHANS = 5
@@ -171,6 +176,9 @@ HAYSTACK_CONNECTIONS = {
 }
 # 自动更新索引
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+# 用于RSS
+SITE_END_TITLE = "聚会阅读器"
 
 # 网站描述，用于SEO
 SITE_DESCRIPTION = "Fswy的个人网站，记录生活的瞬间，分享学习的心得"
@@ -186,3 +194,4 @@ SITE_ID = 1
 
 # sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 API_FLAG = True
+

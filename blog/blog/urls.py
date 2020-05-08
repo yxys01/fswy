@@ -21,7 +21,7 @@ from apps.fswy.sitemaps import ArticleSitemap, CategorySitemap, TagSitemap
 from django.conf import settings
 from rest_framework.routers import DefaultRouter
 from apps.api import views as api_views
-
+from apps.fswy.feeds import AllArticleRssFeed
 if settings.API_FLAG:
     router = DefaultRouter()
     router.register(r'users', api_views.UserListSet)
@@ -51,6 +51,10 @@ urlpatterns = [
     # 网站地图
     # re_path(r'^sitemap.xml$', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path(r'sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # rss订阅
+    path(r'feed/', AllArticleRssFeed(), name='rss'),
+
+    path(r'mdeditor/', include(('mdeditor.urls', 'mdeditor'), namespace='mdeditor')),
 
 ]
 if settings.API_FLAG:

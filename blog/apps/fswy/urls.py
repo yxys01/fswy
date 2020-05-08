@@ -98,4 +98,6 @@ urlpatterns = [
     # 喜欢
     # url(r'^love/$', LoveView, name='love'),
     path(r'love/', LoveView, name='love'),
+
+
 ]
