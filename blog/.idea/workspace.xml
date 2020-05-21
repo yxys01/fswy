@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="44aaf3b0-74e9-4d45-9755-2d6b5c14d137" name="默认更改列表" comment=",">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/feeds.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/feeds.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/fswy/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/fswy/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_right.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_right.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_6nk3ejwxufqzj5ms.seg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoosh_index/_MAIN_1.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_gecvaxx08mbqq91w.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_rf35m65nv7b39bzf.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_sr95mq4q0k85jeei.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/MAIN_t5gg6tfaouoa0psg.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/_MAIN_9.toc" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +67,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/interview" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -150,7 +147,8 @@
       <workItem from="1587606203947" duration="15612000" />
       <workItem from="1587711445688" duration="14454000" />
       <workItem from="1588058420915" duration="29221000" />
-      <workItem from="1588212741616" duration="39058000" />
+      <workItem from="1588212741616" duration="42590000" />
+      <workItem from="1589963654069" duration="1361000" />
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
